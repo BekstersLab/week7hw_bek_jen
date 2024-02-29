@@ -1,5 +1,6 @@
 from people.person import Person
 from people.employee import Employee
+from people.customer import Customer
 
 person_1 = Person('Mary', 'Alice', 'Peterson', 'mary.peterson@gmail.com')
 
@@ -28,3 +29,8 @@ print(f"{employee_firstname} {employee_middlename} {employee_lastname} works in 
 
 print(f"{employee_firstname}'s ID number is {employee_id}")  # Robert's ID number is EM4505
 
+customer_1 = Customer('Helen', 'Claire', 'Herbert', 'helen.herbert@gmail.com', '85647239')
+# use __add__ in customer.py to join attributes together into one variable which is easier to call
+customer_fullname = customer_1.first_name + " " + customer_1.middle_name + " " + customer_1.get_lastname()
+customer_account = customer_1.get_account_number()
+print(f"{customer_fullname}'s account number is: {customer_1.get_account_number()}")
