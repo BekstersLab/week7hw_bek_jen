@@ -12,6 +12,3 @@ class Customer(Person):
 
     def get_account_number(self):
         return self.account_number
-
-    def __add__(self):
-        return self.first_name + self.middle_name + self.get_lastname()
