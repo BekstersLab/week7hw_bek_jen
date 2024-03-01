@@ -29,3 +29,6 @@ class Person:
 
     def get_email(self):
         return self.email
+
+    def __add__(self):
+        return self.first_name + self.middle_name + self.get_lastname()
