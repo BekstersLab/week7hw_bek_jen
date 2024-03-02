@@ -43,3 +43,4 @@ class Employee(Person):
 
     def get_leave_days(self):
         return self.leave_days
+    
