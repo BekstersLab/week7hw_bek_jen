@@ -16,11 +16,12 @@ class Customer(Person):
         return self._account_number
 
     def __str__(self):
-        return f'Firstname: {self.first_name}\n'
+        return (f'Firstname: {self.get_firstname()}\nMiddlename: {self.get_middlename()}\nLastname:'
+                f' {self.get_lastname()}\nEmail: {self.get_email()}')
 
 
 if __name__ == '__main__':
 
-    customer11 = Customer('Jane', 'A', 'Doe', 'jad12@gmail.com', '01221234')
+    customer11 = Customer('Mei', 'Ling', 'Chen', 'mei.chen@example.com', '01221234')
 
     print(customer11)

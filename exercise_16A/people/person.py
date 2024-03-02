@@ -12,28 +12,29 @@ class Person:
     # anything inside it will be called when we create a new Person
     # Person is a pattern, __init__ is a method called when we instantiate a new Person
     def __init__(self, firstname, middlename, lastname, email):
-        self.first_name = firstname
-        self.middle_name = middlename
+        self._first_name = firstname
+        self._middle_name = middlename
         self.__last_name = lastname
-        self.email = email
+        self._email = email
 
     # instance method - it can know about each different instance of Person and access different properties on self
     def get_firstname(self):
-        return self.first_name
+        return self._first_name
 
     def get_middlename(self):
-        return self.middle_name
+        return self._middle_name
 
     def get_lastname(self):
         return self.__last_name
 
     def get_email(self):
-        return self.email
+        return self._email
 
     # other refers to another object of this class
     def __add__(self, other):
-        return (f'Fullname: {self.first_name} {self.middle_name} {self.__last_name}\nEmail: {self.email}\n\n'
-                f'Fullname: {other.first_name} {other.middle_name} {other.__last_name}\nEmail: {other.email}')
+        return (f'Fullname: {self._first_name} {self._middle_name} {self.__last_name}\nEmail: {self._email}\n\n'
+                f'Fullname: {other.get_firstname()} {other.get_middlename()} {other.get_lastname()}\nEmail: '
+                f'{other.get_email()}')
 
 
 if __name__ == '__main__':
