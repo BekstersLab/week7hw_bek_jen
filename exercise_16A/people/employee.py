@@ -1,4 +1,4 @@
-from people.person import Person
+from exercise_16A.people.person import Person
 
 
 class Employee(Person):
