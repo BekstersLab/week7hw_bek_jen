@@ -12,35 +12,34 @@ class Person:
     # anything inside it will be called when we create a new Person
     # Person is a pattern, __init__ is a method called when we instantiate a new Person
     def __init__(self, firstname, middlename, lastname, email):
-        self._first_name = firstname
-        self._middle_name = middlename
+        self.first_name = firstname
+        self.middle_name = middlename
         self.__last_name = lastname
-        self._email = email
+        self.email = email
 
     # instance method - it can know about each different instance of Person and access different properties on self
     def get_firstname(self):
-        return self._first_name
+        return self.first_name
 
     def get_middlename(self):
-        return self._middle_name
+        return self.middle_name
 
     def get_lastname(self):
         return self.__last_name
 
+    def get_fullname(self):
+        return f"{self.first_name} {self.middle_name} {self.__last_name}"
+
     def get_email(self):
-        return self._email
+        return self.email
 
-    # other refers to another object of this class
-    def __add__(self, other):
-        return (f'Fullname: {self._first_name} {self._middle_name} {self.__last_name}\nEmail: {self._email}\n\n'
-                f'Fullname: {other.get_firstname()} {other.get_middlename()} {other.get_lastname()}\nEmail: '
-                f'{other.get_email()}')
+    # polymorphism - Employee will override this method to add specific information only relevant to employees
+    def display_info(self):
+        return (f"***************************"
+                f"\nName: {self.get_fullname()}"
+                f"\nEmail: {self.email}")
 
-
-if __name__ == '__main__':
-
-    # instantiated 2 objects of the Person class
-    person_a = Person('Emily', 'Grace', 'Thompson', 'emily.thompson@example.com')
-    person_b = Person('Alexander', 'James', 'Rodriguez', 'alexander.rodriguez@example.com')
-
-    print(person_a + person_b)
+    # # bad code - first experiment with overloading + operator, but used incorrectly
+    # # replaced with get_fullname method above
+    # def __add__(self):
+    #     return self.first_name + self.middle_name + self.get_lastname()
