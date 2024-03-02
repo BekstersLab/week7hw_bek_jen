@@ -30,5 +30,16 @@ class Person:
     def get_email(self):
         return self.email
 
-    def __add__(self):
-        return self.first_name + self.middle_name + self.get_lastname()
+    # other refers to another object of this class
+    def __add__(self, other):
+        return (f'Fullname: {self.first_name} {self.middle_name} {self.__last_name}\nEmail: {self.email}\n\n'
+                f'Fullname: {other.first_name} {other.middle_name} {other.__last_name}\nEmail: {other.email}')
+
+
+if __name__ == '__main__':
+
+    # instantiated 2 objects of the Person class
+    person_a = Person('Emily', 'Grace', 'Thompson', 'emily.thompson@example.com')
+    person_b = Person('Alexander', 'James', 'Rodriguez', 'alexander.rodriguez@example.com')
+
+    print(person_a + person_b)
