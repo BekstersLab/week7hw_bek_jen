@@ -52,7 +52,7 @@ class Account:
 
     def __str__(self):
         return (f'Account Number: {self.__account_number}\nAccount Name: {self._account_holder_name}\nBalance: '
-                f'£{self._balance}\nEmail: {self.__account_type}\nOpening Date: {self.__opening_date}')
+                f'£{self._balance}\nAccount Type: {self.__account_type}\nOpening Date: {self.__opening_date}')
 
 
 if __name__ == '__main__':
