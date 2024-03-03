@@ -9,8 +9,8 @@ person_middlename = person_1.get_middlename()
 person_lastname = person_1.get_lastname()
 person_email = person_1.get_email()
 
-# print(f"{person_firstname} {person_lastname}'s email address is {person_email}")
-# # Mary Peterson's email address is mary.peterson@gmail.com
+print(f"{person_firstname} {person_lastname}'s email address is {person_email}")
+# Mary Peterson's email address is mary.peterson@gmail.com
 
 # create an instance of Employee class
 r_jones = Employee('Robert', 'Edward', 'Jones', 'robert.jones@gmail.com',
@@ -71,3 +71,4 @@ print(f"{employee_display_info}")
 # customer_fullname = customer_1.first_name + " " + customer_1.middle_name + " " + customer_1.get_lastname()
 # customer_account = customer_1.get_account_number()
 # print(f"{customer_fullname}'s account number is: {customer_1.get_account_number()}")
+
