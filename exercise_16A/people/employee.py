@@ -40,17 +40,6 @@ class Employee(Person):
     def get_department(self):
         return self.department
 
-
-
-
-
-
-
-
-
-
-
-=======
     # use a getter as national insurance attribute is private
     # work with attributes indirectly as they can be accessed from outside the class directly through the getter
     # getters don't take arguments, they just return a value
@@ -72,5 +61,3 @@ class Employee(Person):
 
     def get_leave_days(self):
         return self.leave_days
-    
->>>>>>> bek_branch
