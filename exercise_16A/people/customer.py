@@ -32,7 +32,7 @@ class Customer(Person):
         except TypeError:  # If there is an exception, try block is skipped and except block will run
 
             # Prints a string, reminding the user to pass numbers as an argument
-            print("Argument passed must be numbers for total cost in basket.")
+            print("Error: Argument passed must be numbers for total cost in basket.")
 
     def get_purchase_total(self):  # def defines the get_total_purchase method
 
@@ -43,7 +43,7 @@ class Customer(Person):
 
         # returns the sum of the total purchases of two instances of this subclass, Customer
         # other refers to another instance of this class
-        return self._total_purchase + other.get_purchase_total()
+        return round(self._total_purchase + other.get_purchase_total(), 2)
 
     # POLYMORPHISM - Method Overriding - changing the behaviour of a special method for objects of the Customer subclass
     def __str__(self):  # def redefines the special __str__ method for the print() function
@@ -85,3 +85,13 @@ if __name__ == '__main__':
     # + operator overloading behaviour is applied on two objects, customer1 and customer
     # prints a string containing a sum of two objects' total purchases
     print(f'Sum of two object\'s total purchases: £{customer1 + customer2}')
+
+    # OBJECT 3 - Testing Try and Except block for TypeError ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    # Another object of the Customer subclass is instantiated with 5 arguments, object is assigned to customer3
+    customer3 = Customer('Michael', 'A', 'Scott', 'm.scott@example.com', '5629473801')
+
+    customer3.set_total_purchase('678')  # testing if Except block will print a string, informing user of TypeError
+
+    # prints the total amount spent by the customer3 object, £0 due to exception encountered
+    print(f'Purchase Total: £{customer3.get_purchase_total()}\n')
