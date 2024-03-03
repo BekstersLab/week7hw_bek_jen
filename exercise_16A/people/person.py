@@ -27,8 +27,19 @@ class Person:
     def get_lastname(self):
         return self.__last_name
 
+    def get_fullname(self):
+        return f"{self.first_name} {self.middle_name} {self.__last_name}"
+
     def get_email(self):
         return self.email
 
-    def __add__(self):
-        return self.first_name + self.middle_name + self.get_lastname()
+    # polymorphism - Employee will override this method to add specific information only relevant to employees
+    def display_info(self):
+        return (f"***************************"
+                f"\nName: {self.get_fullname()}"
+                f"\nEmail: {self.email}")
+
+    # # bad code - first experiment with overloading + operator, but used incorrectly
+    # # replaced with get_fullname method above
+    # def __add__(self):
+    #     return self.first_name + self.middle_name + self.get_lastname()
