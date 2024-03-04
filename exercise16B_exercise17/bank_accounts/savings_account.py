@@ -1,4 +1,6 @@
 from exercise16B_exercise17.bank_accounts.account import Account
+from exercise16B_exercise17.bank_accounts.custom_exceptions import WithdrawalLimitExceededError, InsufficientFundsError
+from datetime import datetime
 
 
 class Savings(Account):
@@ -48,21 +50,42 @@ class Savings(Account):
     # InsufficientFundsError & WithdrawalLimitExceededError
     def withdraw(self, amount):
 
-        if amount <= self._withdraw_limit and self._min_balance <= abs(self._min_balance - amount):
+        try:
 
-            new_balance = self.get_balance() - amount
+            if amount <= self._withdraw_limit and self._min_balance <= abs(self._min_balance - round(amount, 2)):
 
-            self.set_balance(new_balance)
+                new_balance = self.get_balance() - amount
+                self.set_balance(new_balance)
 
-        elif amount > self._withdraw_limit:
+            elif amount > self._withdraw_limit:
 
-            # raise WithdrawalLimitExceededError
-            print('Withdrawal limit reached!')
+                raise WithdrawalLimitExceededError(amount)
 
-        else:
+            else:
 
-            # raise InsufficientFundsError
-            print('Not enough money!')
+                raise InsufficientFundsError(amount)
+
+        except WithdrawalLimitExceededError as withdrawal_error:
+
+            print(withdrawal_error)
+
+            with open('exceptions_history.txt', 'a') as file:
+
+                now = datetime.now().strftime("%d %b %Y %H:%M:%S")
+                file.writelines(f'\nWithdrawalLimitExceededError: £{withdrawal_error.amount} Date/Time: {now}')
+
+        except InsufficientFundsError as funds_error:
+
+            print(funds_error)
+
+            with open('exceptions_history.txt', 'a') as file:
+
+                now = datetime.now().strftime("%d %b %Y %H:%M:%S")
+                file.writelines(f'\nInsufficientFundsError: £{funds_error.amount} Date/Time: {now}')
+
+        finally:
+
+            file.close()
 
     def __str__(self):
 
@@ -82,7 +105,6 @@ if __name__ == '__main__':
 
     print(chloe_account)
 
-    chloe_account.withdraw(500)
+    chloe_account.withdraw(444)
 
     print(chloe_account)
-
