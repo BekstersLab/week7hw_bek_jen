@@ -1,0 +1,6 @@
+WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:34:36
+WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:34:50
+WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:37:31
+InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:39:04
+InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:39:09
+InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:40:47

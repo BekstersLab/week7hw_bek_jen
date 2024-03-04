@@ -1,4 +1,6 @@
 from exercise16B_exercise17.bank_accounts.account import Account
+from exercise16B_exercise17.bank_accounts.custom_exceptions import WithdrawalLimitExceededError, InsufficientFundsError
+from datetime import datetime
 
 
 class Savings(Account):
@@ -16,8 +18,13 @@ class Savings(Account):
 
     # InvalidInterestRateError:
     def set_interest_rate(self, interest):
+        try:
+            self._interest_rate = round(interest, 2)
 
-        self._interest_rate = round(interest, 2)
+        except TypeError:
+
+            # Prints a string, reminding the user to pass numbers as an argument
+            print("Error: Argument passed must be numbers for interest rate.")
 
     def get_interest_earned(self):
 
@@ -43,9 +50,48 @@ class Savings(Account):
     # InsufficientFundsError & WithdrawalLimitExceededError
     def withdraw(self, amount):
 
-        new = self.get_balance() - amount
+        try:
 
-        self.set_balance(new)
+            if amount <= self._withdraw_limit and self._min_balance <= abs(self._min_balance - round(amount, 2)):
+
+                new_balance = self.get_balance() - amount
+                self.set_balance(new_balance)
+
+            elif amount > self._withdraw_limit:
+
+                raise WithdrawalLimitExceededError(amount)
+
+            else:
+
+                raise InsufficientFundsError(amount)
+
+        except WithdrawalLimitExceededError as withdrawal_error:
+
+            print(withdrawal_error)
+
+            with open('exceptions_history.txt', 'a') as file:
+
+                now = datetime.now().strftime("%d %b %Y %H:%M:%S")
+                file.writelines(f'\nWithdrawalLimitExceededError: £{withdrawal_error.amount} Date/Time: {now}')
+
+        except InsufficientFundsError as funds_error:
+
+            print(funds_error)
+
+            with open('exceptions_history.txt', 'a') as file:
+
+                now = datetime.now().strftime("%d %b %Y %H:%M:%S")
+                file.writelines(f'\nInsufficientFundsError: £{funds_error.amount} Date/Time: {now}')
+
+        finally:
+
+            file.close()
+
+    def __str__(self):
+
+        return (f'Account Number: {self.get_account_number()}\nAccount Holder Name: '
+                f'{self.get_account_name()}\nAccount Type: {self.get_account_type()}\nCurrent Balance: '
+                f'£{self.get_balance()}\n')
 
 
 if __name__ == '__main__':
@@ -53,3 +99,12 @@ if __name__ == '__main__':
     chloe_account = Savings(45677, 'chloe', 300, 'savings', 5.12, 500, 500)
     # 5.12% AER/5.00% gross p.a. (£1 - £5,000)
 
+    # chloe_account.set_interest_rate('5t')
+
+    chloe_account.set_opening_date()
+
+    print(chloe_account)
+
+    chloe_account.withdraw(444)
+
+    print(chloe_account)
