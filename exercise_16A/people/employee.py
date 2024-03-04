@@ -2,12 +2,10 @@ from exercise_16A.people.person import Person
 
 
 class Employee(Person):
-    # add instance attributes after self, they can be customised after creating the instance
+    # constructor (__init__) with extra parameters to give subclass its own functionality
+    # self refers to the current instance of the class
     def __init__(self, firstname, middlename, lastname, email, id_number, department, national_insurance, leave_days=0):
-        # use super() to refer to the base class
-        # in this case we use super() to access the __init__ method from the Person class
-        # calls the constructor function (__init__) from the base class
-        # Employee now uses base class (Person) but adds its own stuff on
+        # use super() to access the constructor function (__init__)  from the base class (Account)
         super().__init__(firstname, middlename, lastname, email)  # Call the base class constructor
         # Unique to Employee:
         self.id_number = id_number
@@ -24,6 +22,9 @@ class Employee(Person):
                 f"\nNI Number: {self.get_national_insurance()}"
                 f"\nLeave Days: {self.get_leave_days()}")
 
+    # getters get the value of an instance attribute, serving as intermediaries
+    # they protect the attributes by providing indirect access to modify them
+    # can be made non public (__), worked with indirectly and accessed from outside the class directly through getter
     def get_id_number(self):
         return self.id_number
 
@@ -39,15 +40,18 @@ class Employee(Person):
 
     # operator overloading to add leave days (+ operator)
     def __add__(self, other):
+        # add value of other to leave_days attribute of current instance (self)
         self.leave_days += other
+        # return current instance after updating leave_days attribute
         return self
 
     # operator overloading to subtract leave days (- operator)
     def __sub__(self, other):
+        # subtract value of other to leave_days attribute of current instance (self)
         self.leave_days -= other
-        if self.leave_days < 0:
-            self.leave_days = 0
+        # return current instance after updating leave_days attribute
         return self
 
     def get_leave_days(self):
+        # return value of the leave_days instance attribute when the method is called
         return self.leave_days
