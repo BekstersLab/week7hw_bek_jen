@@ -15,8 +15,6 @@ chloe_account.withdraw(444)
 
 print(chloe_account)
 
-# Jen, add your code here!
-
 # print('//' * 20)
 #
 # # create an instance of CurrentAccount class with details specified and assign to jo_account variable
