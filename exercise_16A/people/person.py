@@ -27,6 +27,7 @@ class Person:
     def get_lastname(self):
         return self.__last_name
 
+    # better way of retrieving a person's full name. Replaces bad code using overloading + operator below
     def get_fullname(self):
         return f"{self.first_name} {self.middle_name} {self.__last_name}"
 

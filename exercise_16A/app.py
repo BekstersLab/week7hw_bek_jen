@@ -2,8 +2,11 @@ from people.person import Person
 from people.employee import Employee
 from people.customer import Customer
 
+# create an instance of Person class with four arguments
 person_1 = Person('Mary', 'Alice', 'Peterson', 'mary.peterson@gmail.com')
 
+# instance calls getter to get value and assign to a variable
+# the variables can then be referenced in an f-string to print
 person_firstname = person_1.get_firstname()
 person_middlename = person_1.get_middlename()
 person_lastname = person_1.get_lastname()
@@ -46,10 +49,10 @@ print(f"{r_jones.first_name} now has {r_jones.leave_days} leave days remaining")
 
 # using the overload subtract operator to deduct leave days
 r_jones - 30
-# taking more leave than remaining shows 0.
-# this could be fixed to give an error message if he takes more than remaining amount
+# taking more leave than remaining shows a negative number
+# this could be fixed to raise an exception if he takes more than his remaining leave amount
 print(f"{r_jones.first_name} has {r_jones.leave_days} leave days remaining")
-# Robert has 0 leave days remaining
+# Robert has -4 leave days remaining
 
 # set a generic variable to reference each employees information as defined in display_info method
 employee_display_info = r_jones.display_info()
@@ -58,6 +61,7 @@ print(f"{employee_display_info}")
 # Name: Robert Edward Jones - from display_info in Person class
 # Email: robert.jones@gmail.com - from display_info in Person class
 
+# create an instance of Employee class
 s_harris = Employee('Sarah', 'Louise', 'Harris', 'sarah.harris@gmail.com',
                     'EM0306', 'accounts', 'GE 56 38 61 D', 5)
 
