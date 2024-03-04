@@ -33,9 +33,9 @@ class Account:
 
         self.__account_type = account_type
 
-    def get_account_type(self, account_type):
+    def get_account_type(self):
 
-        self.__account_type = account_type
+        return self.__account_type
 
     def set_opening_date(self, day=None, month=None, year=None):
 
