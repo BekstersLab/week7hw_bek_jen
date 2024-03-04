@@ -4,8 +4,8 @@
 # class name always starts with a capital letter
 
 # inheritance - shared attributes all have
-# define a class (Person) that has the base; firstname, middlename, lastname, email
-# Employee and Customer will inherit from user but have their own attributes
+# define a class (Person) that has the superclass; firstname, middlename, lastname, email
+# Employee and Customer are subclasses and will inherit from user but have their own attributes
 
 class Person:
     # __init__ is a special method called the CONSTRUCTOR which starts/ends in dunderscore - it is special
@@ -18,12 +18,16 @@ class Person:
         self.email = email
 
     # instance method - it can know about each different instance of Person and access different properties on self
+    # getters get the value of an instance attribute, serving as intermediaries
+    # they protect the attributes by providing indirect access to modify them
+    # can be made non-public (__), worked with indirectly and accessed from outside the class directly through getter
     def get_firstname(self):
         return self.first_name
 
     def get_middlename(self):
         return self.middle_name
 
+    # definitely use a getter as last_name attribute is private (__)
     def get_lastname(self):
         return self.__last_name
 

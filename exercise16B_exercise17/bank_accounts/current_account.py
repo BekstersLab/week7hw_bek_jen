@@ -1,15 +1,15 @@
-# import the Account base class to inherit from it
+# import the Account superclass to inherit from it
 from exercise16B_exercise17.bank_accounts.account import Account
 # import the OverdraftBreached Exception class to handle overdrafts
 from exercise16B_exercise17.bank_accounts.insufficient_funds_exception import OverdraftBreached
 
 
-# create subclass which inherits from Account base class
+# create subclass which inherits from Account superclass
 class CurrentAccount(Account):
     # constructor (__init__) with extra parameter (overdraft_allowance) to give subclass its own functionality
-    # self refers to the current instance of the class eg. jo_account variable.
+    # self refers to the current instance of the class e.g. jo_account variable.
     def __init__(self, account_number, account_holder_name, balance, account_type, overdraft_allowance):
-        # use super() to access the constructor function (__init__)  from the base class (Account)
+        # use super() to access the constructor function (__init__)  from the superclass (Account)
         super().__init__(account_number, account_holder_name, balance, account_type)
         # specific to CurrentAccount only
         self._overdraft_allowance = overdraft_allowance

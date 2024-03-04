@@ -5,15 +5,15 @@ class Employee(Person):
     # constructor (__init__) with extra parameters to give subclass its own functionality
     # self refers to the current instance of the class
     def __init__(self, firstname, middlename, lastname, email, id_number, department, national_insurance, leave_days=0):
-        # use super() to access the constructor function (__init__)  from the base class (Account)
-        super().__init__(firstname, middlename, lastname, email)  # Call the base class constructor
+        # use super() to access the constructor function (__init__)  from the superclass (Account)
+        super().__init__(firstname, middlename, lastname, email)  # Call the superclass constructor
         # Unique to Employee:
         self.id_number = id_number
         self.department = department
         self.__national_insurance = national_insurance  # __ before to keep it private
         self.leave_days = leave_days
 
-    # polymorphism - this calls the base class method and adds further information
+    # polymorphism - this calls the superclass method and adds further information
     def display_info(self):
         base_info = Person.display_info(self)
         return (f"{base_info}"
@@ -24,15 +24,14 @@ class Employee(Person):
 
     # getters get the value of an instance attribute, serving as intermediaries
     # they protect the attributes by providing indirect access to modify them
-    # can be made non public (__), worked with indirectly and accessed from outside the class directly through getter
+    # can be made non-public (__), worked with indirectly and accessed from outside the class directly through getter
     def get_id_number(self):
         return self.id_number
 
     def get_department(self):
         return self.department
 
-    # use a getter as national insurance attribute is private
-    # work with attributes indirectly as they can be accessed from outside the class directly through the getter
+    # definitely use a getter as national insurance attribute is private
     # getters don't take arguments, they just return a value
     def get_national_insurance(self):
         # return value of the national insurance instance attribute when the method is called
