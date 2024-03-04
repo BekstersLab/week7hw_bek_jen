@@ -1,7 +1,7 @@
 # import the Account base class to inherit from it
-from account import Account
+from exercise16B_exercise17.bank_accounts.account import Account
 # import the OverdraftBreached Exception class to handle overdrafts
-from insufficient_funds_exception import OverdraftBreached
+from exercise16B_exercise17.bank_accounts.insufficient_funds_exception import OverdraftBreached
 
 
 # create subclass which inherits from Account base class
