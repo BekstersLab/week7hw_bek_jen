@@ -1,6 +1,19 @@
-from bank_accounts.account import Account
 from bank_accounts.current_account import CurrentAccount
+from bank_accounts.savings_account import Savings
 from bank_accounts.insufficient_funds_exception import OverdraftBreached
+
+chloe_account = Savings(45677, 'chloe', 300, 'savings', 5.12, 500, 500)
+    # 5.12% AER/5.00% gross p.a. (£1 - £5,000)
+
+    # chloe_account.set_interest_rate('5t')
+
+chloe_account.set_opening_date()
+
+print(chloe_account)
+
+chloe_account.withdraw(444)
+
+print(chloe_account)
 
 # Jen, add your code here!
 
