@@ -66,7 +66,7 @@ class Savings(Account):
             # if block will execute if the withdrawal amount is less or equal to the withdrawal limit
             # AND the minimum balance required is less or equal to the new balance after withdrawal
             # abs function converts value to a positive number
-            if amount <= self._withdraw_limit and self._min_balance <= abs(self._min_balance - amount):
+            if amount <= self._withdraw_limit and self._min_balance <= (self.get_balance() - amount):
 
                 # withdraw proceeds: amount is deducted from current balance, rounded to 2 decimal places
                 # and assigned to new_balance variable
@@ -114,9 +114,9 @@ class Savings(Account):
                 self._log_exception(funds_error, file, 'InsufficientFundsError')
 
         # finally statement is always executed, regardless if there's an exception or not
-        finally:
+        # finally:
             # ensuring the file that was appended is closed
-            file.close()
+            # file.close()
 
     def __str__(self):  # Polymorphism, method overriding, changing the behaviour of special __str__ method
 

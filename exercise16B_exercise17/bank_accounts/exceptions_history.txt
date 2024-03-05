@@ -9,3 +9,5 @@
 45677-Chloe Matthews-InsufficientFundsError: £200 | Date/Time: 05 Mar 2024 16:39:25
 45677-Chloe Matthews-InsufficientFundsError: £200 | Date/Time: 05 Mar 2024 16:44:27
 45677-Chloe Matthews-InsufficientFundsError: £333 | Date/Time: 05 Mar 2024 16:44:40
+45677-Chloe Matthews-WithdrawalLimitExceededError: £511 | Date/Time: 05 Mar 2024 17:21:16
+45677-Chloe Matthews-WithdrawalLimitExceededError: £511 | Date/Time: 05 Mar 2024 17:21:27
