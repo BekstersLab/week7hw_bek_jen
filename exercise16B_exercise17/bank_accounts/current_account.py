@@ -44,6 +44,8 @@ class CurrentAccount(Account):
             self._balance = new_balance
         else:
             # if overdraft breached then calculate amount
+            # used abs() function - returns a positive version of a negative number
+            # used this to change the -170 return in raised exception to update value in f-string ('£-170' now '£170')
             breach_amount = abs(new_balance - self._overdraft_allowance)
             # raise a custom exception and print the statement. breach_amount is determined in OverdraftBreached class
             raise OverdraftBreached(f"Withdrawal denied. You will exceed your overdraft limit by £{breach_amount}")
