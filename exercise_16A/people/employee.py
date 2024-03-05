@@ -15,7 +15,9 @@ class Employee(Person):
 
     # polymorphism - this calls the superclass method and adds further information
     def display_info(self):
+        # call the display_info method from the superclass (Person) to get basic information relating to every person
         base_info = Person.display_info(self)
+        # the following f-strings are then printed below the f-strings from the Person superclass
         return (f"{base_info}"
                 f"\nID Number: {self.get_id_number()}"
                 f"\nDepartment: {self.get_department()}"
@@ -38,8 +40,10 @@ class Employee(Person):
         return self.__national_insurance
 
     # operator overloading to add leave days (+ operator)
+    # other is a common naming convention and refers to the object being added to self
     def __add__(self, other):
         # add value of other to leave_days attribute of current instance (self)
+        # adds to the value of the current instances leave_days
         self.leave_days += other
         # return current instance after updating leave_days attribute
         return self
@@ -47,6 +51,7 @@ class Employee(Person):
     # operator overloading to subtract leave days (- operator)
     def __sub__(self, other):
         # subtract value of other to leave_days attribute of current instance (self)
+        # subtracts from the value of the current instances leave_days
         self.leave_days -= other
         # return current instance after updating leave_days attribute
         return self
