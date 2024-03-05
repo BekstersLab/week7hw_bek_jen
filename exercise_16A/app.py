@@ -30,7 +30,7 @@ employee_department = r_jones.get_department()
 employee_national_insurance = r_jones.get_national_insurance()
 employee_leave_days = r_jones.get_leave_days()
 
-# initially started calling the defined variables above...
+# calling the defined variables above and printing in an f-string
 print(f"{employee_firstname} {employee_middlename} {employee_lastname} works in the {employee_department} department")
 # Robert Edward Jones works in the sales department
 
@@ -38,20 +38,21 @@ print(f"{employee_firstname}'s employee ID number is {employee_id} and his natio
       f"{employee_national_insurance}")
 # Robert's employee ID number is EM4505 and his national insurance number is JB 56 73 80 C
 
-# changed way of referencing variable, now use instance variable name with the method from employee.py
-print(f"{r_jones.first_name} {r_jones.get_lastname()} has {r_jones.leave_days} leave days remaining")
+print(f"{employee_firstname} {employee_lastname} has {employee_leave_days} leave days remaining")
 # Robert Jones has 20 leave days remaining
 
 # using the overload add operator to add leave days to existing amount
 r_jones + 6
-print(f"{r_jones.first_name} now has {r_jones.leave_days} leave days remaining")
+employee_leave_days = r_jones.get_leave_days()
+print(f"{employee_firstname} now has {employee_leave_days} leave days remaining")
 # Robert now has 26 leave days remaining
 
 # using the overload subtract operator to deduct leave days
 r_jones - 30
+employee_leave_days = r_jones.get_leave_days()
 # taking more leave than remaining shows a negative number
 # this could be fixed to raise an exception if he takes more than his remaining leave amount
-print(f"{r_jones.first_name} has {r_jones.leave_days} leave days remaining")
+print(f"{employee_firstname} has {employee_leave_days} leave days remaining")
 # Robert has -4 leave days remaining
 
 # set a generic variable to reference each employees information as defined in display_info method
