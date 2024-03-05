@@ -2,14 +2,48 @@ from bank_accounts.current_account import CurrentAccount
 from bank_accounts.savings_account import Savings
 from bank_accounts.insufficient_funds_exception import OverdraftBreached
 
+# OBJECT 1 - Instantiated an object of the Savings subclass
+alex_account = Savings(93751, 'Alexander James Rodriguez', 600, 'savings', 5, 500, 500)
+
+# No arguments passed will set the opening date to today
+alex_account.set_opening_date()
+
+# Prints main attributes of the alex_account object
+print(alex_account)
+
+# Insufficient Funds Exception raised
+alex_account.withdraw(342)
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# OBJECT 2 - Instantiated a 2nd object of the Savings subclass
 chloe_account = Savings(45677, 'Chloe Matthews', 600, 'savings', 5, 500, 500)
 
+# Arguments are passed to the chloe_account's setter method to set a specific opening date
 chloe_account.set_opening_date(2, 2, 2022)
 
+# Prints main attributes of the chloe_account object
 print(chloe_account)
 
-chloe_account.withdraw(222)
+# Withdrawal Limit Exception raised
+chloe_account.withdraw(511)
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# OBJECT 3 - Instantiated a 3rd object of the Savings subclass
+macy_account = Savings(45677, 'Macy Andrews', 800, 'savings', 5, 500, 500)
+
+# Arguments are passed to the chloe_account's setter method to set a specific opening date
+macy_account.set_opening_date(2, 2, 2022)
+
+# Prints main attributes of the maxy_account object
+print(macy_account)
+
+# Withdrawal allowed
+macy_account.withdraw(100)
+
+# Updated balance
+print(f'New Balance: £{macy_account.get_balance()}')
 
 # print('//' * 20)
 #

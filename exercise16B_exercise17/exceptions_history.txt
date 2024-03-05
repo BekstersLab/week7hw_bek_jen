@@ -1,10 +1,12 @@
-
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 21:05:06
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 21:14:35
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 21:16:3545677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:36:58
+93751-Alexander James Rodriguez-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 21:16:35
 45677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:37:33
-45677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:39:02
-45677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:41:01
-45677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:43:57
-45677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:44:18
-45677-Chloe Matthews-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 16:44:46
+93751-Alexander James Rodriguez-InsufficientFundsError: £222 | Date/Time: 05 Mar 2024 17:18:07
+93751-Alexander James Rodriguez-InsufficientFundsError: £342 | Date/Time: 05 Mar 2024 17:30:36
+45677-Chloe Matthews-WithdrawalLimitExceededError: £511 | Date/Time: 05 Mar 2024 17:30:36
+93751-Alexander James Rodriguez-InsufficientFundsError: £342 | Date/Time: 05 Mar 2024 17:35:53
+45677-Chloe Matthews-WithdrawalLimitExceededError: £511 | Date/Time: 05 Mar 2024 17:35:53
+45677-Macy Andrews-InsufficientFundsError: £100 | Date/Time: 05 Mar 2024 17:35:53
+93751-Alexander James Rodriguez-InsufficientFundsError: £342 | Date/Time: 05 Mar 2024 17:36:15
+45677-Chloe Matthews-WithdrawalLimitExceededError: £511 | Date/Time: 05 Mar 2024 17:36:15
+93751-Alexander James Rodriguez-InsufficientFundsError: £342 | Date/Time: 05 Mar 2024 17:41:35
+45677-Chloe Matthews-WithdrawalLimitExceededError: £511 | Date/Time: 05 Mar 2024 17:41:35
