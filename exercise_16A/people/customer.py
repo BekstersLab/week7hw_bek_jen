@@ -8,7 +8,7 @@ class Customer(Person):
     def __init__(self, firstname, middlename, lastname, email, account_number):
         # use super() to refer to the base or super class
         # in this case we use super() to access the __init__ method from the Person class
-        # calls the constructor function (__init__) from the super class
+        # calls the constructor method (__init__) from the super class
         # Customer now has super class (Person) attributes and methods, but adds its own too
         super().__init__(firstname, middlename, lastname, email)  # Call the parent class constructor
         self.__account_number = account_number  # Unique to each object of the Customer class
