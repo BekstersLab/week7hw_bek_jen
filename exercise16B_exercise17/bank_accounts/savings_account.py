@@ -46,8 +46,8 @@ class Savings(Account):
         # rounds the new value to 2 decimal places and assigns it to the withdrawal limit attribute
         self._withdraw_limit = round(limit, 2)
 
-    # defines a private method to log exceptions, only to be called within this subclass
-    def __log_exception(self, error_variable, file, exception_name):
+    # defines a protected method to log exceptions, only to be called within this subclass
+    def _log_exception(self, error_variable, file, exception_name):
 
         # datetime.now() returns datetime object with current date and time
         # strftime method formats datetime object into a string, assigned to now variable
@@ -98,7 +98,7 @@ class Savings(Account):
             with open('exceptions_history.txt', 'a') as file:
 
                 # 3 arguments are passed to the private log exception method to record the exception in a txt file
-                self.__log_exception(withdrawal_error, file, 'WithdrawalLimitExceededError')
+                self._log_exception(withdrawal_error, file, 'WithdrawalLimitExceededError')
 
         # if InsufficientFundsError exception is raised, except statement catches it and assigns it to a variable
         except InsufficientFundsError as funds_error:
@@ -111,7 +111,7 @@ class Savings(Account):
             with open('exceptions_history.txt', 'a') as file:
 
                 # 3 arguments are passed to the private log exception method to record the exception in a txt file
-                self.__log_exception(funds_error, file, 'InsufficientFundsError')
+                self._log_exception(funds_error, file, 'InsufficientFundsError')
 
         # finally statement is always executed, regardless if there's an exception or not
         finally:
@@ -134,6 +134,6 @@ if __name__ == '__main__':
 
     print(chloe_account)
 
-    chloe_account.withdraw(200)
+    chloe_account.withdraw(333)
 
     print(chloe_account)

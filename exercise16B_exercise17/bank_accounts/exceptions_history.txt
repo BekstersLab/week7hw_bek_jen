@@ -1,8 +1,11 @@
-WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:34:36
-WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:34:50
-WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:37:31
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:39:04
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:39:09
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:40:47
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:59:56
-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 21:01:41
+45677-Chloe Matthews-WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:34:36
+45677-Chloe Matthews-WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:34:50
+45677-Chloe Matthews-WithdrawalLimitExceededError: £501 Date/Time: 04 Mar 2024 20:37:31
+45677-Chloe Matthews-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:39:04
+45677-Chloe Matthews-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:39:09
+45677-Chloe Matthews-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:40:47
+45677-Chloe Matthews-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 20:59:56
+45677-Chloe Matthews-InsufficientFundsError: £444 Date/Time: 04 Mar 2024 21:01:41
+45677-Chloe Matthews-InsufficientFundsError: £200 | Date/Time: 05 Mar 2024 16:39:25
+45677-Chloe Matthews-InsufficientFundsError: £200 | Date/Time: 05 Mar 2024 16:44:27
+45677-Chloe Matthews-InsufficientFundsError: £333 | Date/Time: 05 Mar 2024 16:44:40
